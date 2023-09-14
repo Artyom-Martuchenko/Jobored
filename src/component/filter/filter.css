@@ -1,0 +1,113 @@
+@font-face {
+    font-family: Poppins;
+    src: url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap') format('truetype');
+}
+@font-face {
+    font-family: Inter;
+    src: url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap') format('truetype');
+}
+.filter-name {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+#filter-branch {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+#filter-branch-input{
+    
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 6px 4px 6px;
+    margin-top: 8px;
+    margin-left: 20px;
+    gap: 10px;
+
+    width: 275px;
+    height: 42px;
+
+    background: #FFFFFF; 
+    /* Grey 300 */
+
+    border: 1px solid #D5D6DC;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    padding: 0 auto;
+}
+
+#filter-title-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 20px;
+    gap: 10px;
+    border-color: #5E96FC;
+    width: 275px;
+    height: 40px;
+
+    /* Blue Main 500 */
+
+    background: #5E96FC;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+#filter-salary {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+#filter{
+    display: inline;
+    height: 360px;
+    border: 1px solid;
+    width: 315px;
+    border-radius: 12px;
+    margin-top: 40px;
+    background-color: white;
+    display: inline-block;
+    border: none;
+}
+
+#cleanButton{
+    display: inline-flex; 
+    align-items: center;
+    padding-right: 1px; 
+    margin-top: 23.8px; 
+    background-color: transparent; 
+    border: none;
+}
