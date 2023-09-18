@@ -13,6 +13,7 @@ let Widget = (prop) => {
       changeProp = {
         id: prop.id,
         name: rating.name,
+        label: rating.label,
         time: rating.time,
         salary: rating.salary,
         place: rating.place,
@@ -23,6 +24,7 @@ let Widget = (prop) => {
       changeProp = {
         id: prop.id,
         name: rating.name,
+        label: rating.label,
         time: rating.time,
         salary: rating.salary,
         place: rating.place,

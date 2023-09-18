@@ -5,10 +5,10 @@ import Dropdown from "./dropdownForSphere/dropdownForSphere";
 import InputForSalary from "./dropdownForSalary/dropdownForSalary";
 
 function Filter(props) {
-  const [filterValues, setFilterValues] = useState({sphere: '', minSalary: -1, maxSalary: Infinity})
+  const [filterValues, setFilterValues] = useState({sphere: '', minSalary: '', maxSalary: ''})
   
   let cleanClickerHandler = () =>{
-    setFilterValues({sphere: '', minSalary: -1, maxSalary: Infinity})
+    setFilterValues({sphere: '', minSalary: '', maxSalary: ''})
   }
   
   let minFunction = (prop) => {
@@ -26,6 +26,9 @@ function Filter(props) {
     console.log(`sphere: ${filterValues.sphere}`)
   }
   
+  let MoveDataToParent = () =>{
+    props.parentCallBack(filterValues)
+  }
   
   return (
     <div id="filter">
@@ -62,12 +65,12 @@ function Filter(props) {
       <h4 id="filter-salary" style={{ marginTop: "20px", marginLeft: "20px" }}>
         Оклад
       </h4>
-      <InputForSalary placeHolder='От' parentCallBack={minFunction}/>
-      <InputForSalary placeHolder='До' parentCallBack={maxFunction}/>
+      <InputForSalary placeHolder='От' parentCallBack={minFunction} property={filterValues.minSalary}/>
+      <InputForSalary placeHolder='До' parentCallBack={maxFunction} property={filterValues.maxSalary}/>
       <button
         id="filter-title-button"
         style={{ marginTop: "20px", marginLeft: "20px" }}
-        onClick={props.parentCallBack(filterValues)}
+        onClick={MoveDataToParent}
       >
         Применить
       </button>

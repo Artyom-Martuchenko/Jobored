@@ -1,5 +1,6 @@
 import React from "react";
 import "./dropdownForSalary.css";
+import "./../dropdownForSphere/dropdownForSphere.css"
 let Icon = ({ angel = 0 }) => {
   return (
     <svg
@@ -25,31 +26,27 @@ let Icon = ({ angel = 0 }) => {
 };
 
 export default function InputForSalary(prop) {
-    const [count, setCount] = React.useState('')
     
     let countListener = (e) => {
-        console.log(typeof(count))
+        console.log(typeof(prop.property))
         if(e.target.value !== ''){
-          setCount(Number(e.target.value))
           prop.parentCallBack(Number(e.target.value)) 
         }else
-          setCount(e.target.value)
+          prop.parentCallBack(e.target.value)
     }
 
     let countIncrement = () => {
-        if(typeof(count) === "string")
-            setCount(1)
+        if(typeof(prop.property) === "string")
+            prop.parentCallBack(1)
         else
-            setCount(count + 1)
-            prop.parentCallBack(count + 1)
+            prop.parentCallBack(prop.property + 1)
     }
 
     let countDecrement = () => {
-        if(count > 0 && typeof(count) === "number"){
-            setCount(Number(count)-1)
-            prop.parentCallBack(Number(count)-1)
+        if(prop.property > 0 && typeof(prop.property) === "number"){
+            prop.parentCallBack(Number(prop.property)-1)
         }else
-            setCount('')  
+            prop.parentCallBack('')  
     }
 
     return (
@@ -60,7 +57,7 @@ export default function InputForSalary(prop) {
             type="text"
             placeholder={prop.placeHolder}
             onChange={(e)=>{countListener(e)}}
-            value={count}
+            value={prop.property}
         />
         <div style={{ display: "inline-grid", verticalAlign: 'middle' }}>
             <button style={{paddingTop: '1px'}} className="b1" onClick={countIncrement}>

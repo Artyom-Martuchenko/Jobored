@@ -5,7 +5,7 @@ import Widget from "../component/Widget/Widget";
 
 const SearchPage = (props) => {
   const [poisk, setPoisk] = useState("");
-  const [filterBox, setFilterBox] = useState({ sphere: '', minSalary: -1, maxSalary: Infinity})
+  const [filterBox, setFilterBox] = useState({ sphere: '', minSalary: '', maxSalary: ''})
 
   let filterBoxCallBack = (prop) => {
     setFilterBox(prop)
@@ -16,10 +16,16 @@ const SearchPage = (props) => {
   }
 
   let filterOutput = (x) => {
-    if(x.salary <= filterBox.maxSalary && x.salary >= filterBox.minSalary && x.label.includes(filterBox.sphere) && x.name.toLowerCase().includes(poisk)){
-      return true
-    }
-    return false
+    if(filterBox.maxSalary === '' || x.salary <= filterBox.maxSalary){
+      if(filterBox.minSalary === '' || x.salary >= filterBox.minSalary){
+        if(filterBox.sphere === '' || x.label.includes(filterBox.sphere)){
+          if(x.name.toLowerCase().includes(poisk)){
+            return true;
+          }
+        }
+      }
+    }  
+    return false;
   }
 
   return (
@@ -39,6 +45,7 @@ const SearchPage = (props) => {
                 name={x.name}
                 time={x.time}
                 salary={x.salary}
+                label={x.label}
                 place={x.place}
                 favourite={x.favourite}
                 parentCallBack={props.parentcallback}

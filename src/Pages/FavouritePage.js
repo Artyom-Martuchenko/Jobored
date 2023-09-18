@@ -19,11 +19,12 @@ const FavouritePage = (props) => {
           key={x.id}
           id={x.id}
           name={x.name}
+          label={x.label}
           time={x.time}
           salary={x.salary}
           place={x.place}
           favourite={x.favourite}
-          parentcallback={props.parentcallback}
+          parentCallBack={props.parentcallback}
         />
       )):<Icon/>}
     </ul>
